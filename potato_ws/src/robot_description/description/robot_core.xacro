@@ -1,9 +1,14 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro = "https://www.ros.org/wiki/xacro">
+    <xacro:include filename = "inertial_macros.xacro"/>
     <!-- MACROS -->
      <!-- sizes are in meters -->
      <xacro:property name = "BOX_LENGTH" value = "0.30"/>
      <xacro:property name = "BOX_HEIGHT" value = "0.15"/>
+
+     <!-- weight in kg -->
+     <xacro:property name = "BOX_WEIGHT" value = "0.5"/>
+     <xacro:property name = "WHEEL_WEIGHT" value = "0.1"/>
 
     <!-- COLORS -->
     <material name = "white">
@@ -14,7 +19,7 @@
         <color rgba = "0 0 0 1"/>
     </material>
 
-    <material name = "violet">
+    <material name = "purple">
         <color rgba = "0.227 0 0.871 0.8"/>
     </material>
 
@@ -22,7 +27,7 @@
         <color rgba = "0.129 0.98 0.98 0.8"/>
     </material>
 
-    <!-- LINKS -->
+    <!-- BASE LINK -->
      <!-- setting our base link to be the center of rotation -->
      <link name = "base_link">
 
@@ -37,6 +42,7 @@
         <origin xyz = "-0.1 0 0 "/>
       </joint>
 
+    <!-- CHASSIS LINK -->
       <link name = "chassis">
         <visual>
             <!-- moving the origin so the chassis is in the right place -->
@@ -49,6 +55,102 @@
             <!-- chassis will be white -->
             <material name = "white"/>
         </visual>
+        <!-- COLLISION (just a copy of the viusal but without material) -->
+        <collision>
+            <!-- moving the origin so the chassis is in the right place -->
+            <origin xyz = "${BOX_LENGTH/2} 0 0.075"/>
+            <geometry>
+                <!-- box size in meters -->
+                <box size = "${BOX_LENGTH} ${BOX_LENGTH} ${BOX_HEIGHT}"/> 
+            </geometry>
+        </collision>
+
+        <!-- chassis inertial macros -->
+         <xacro:inertial_box mass = "${BOX_WEIGHT}" x = "${BOX_LENGTH}" y = "${BOX_LENGTH}" z = "${BOX_HEIGHT}">
+            <origin xyz = "0.15 0 0.075" rpy = "0 0 0"/>
+         </xacro:inertial_box> 
       </link>
+
+    <!-- LEFT WHEEL LINK -->
+    <joint name = "left_wheel_join" type = "continuous">
+        <parent link = "base_link"/>
+        <child link = "left_wheel"/>
+        <!-- rotate wheel along x-axis -->
+        <origin xyz = "0 0.175 0" rpy = "-${pi/2} 0 0"/>
+        <axis xyz = "0 0 1"/>
+    </joint>
+
+    <link name = "left_wheel">
+        <visual>
+            <geometry>
+                <!-- by default, cylinders in ros are oriented along the z-axis, so we need to rotate along x-axis for wheel -->
+                <cylinder radius = "0.05" length = "0.05"/>
+            </geometry>
+            <material name = "black"/>
+        </visual>
+
+        <!-- left wheel collision -->
+        <collision>
+            <geometry>
+                <cylinder radius = "0.05" length = "0.05"/>
+            </geometry>
+        </collision>
+
+        <!-- left wheel inertial macros -->
+         <xacro:inertial_cylinder mass = "${WHEEL_WEIGHT}" length = "0.04" radius = "0.05">
+            <origin xyz = "0 0 0" rpy = "0 0 0"/>
+         </xacro:inertial_cylinder> 
+    </link>
+
+    <!-- RIGHT WHEEL LINK -->
+    <joint name = "right_wheel_join" type = "continuous">
+        <parent link = "base_link"/>
+        <child link = "right_wheel"/>
+        <!-- rotate wheel along x-axis -->
+        <origin xyz = "0 -0.175 0" rpy = "${pi/2} 0 0"/>
+        <axis xyz = "0 0 -1"/>
+    </joint>
+
+    <link name = "right_wheel">
+        <visual>
+            <geometry>
+                <!-- by default, cylinders in ros are oriented along the z-axis, so we need to rotate along x-axis for wheel -->
+                <cylinder radius = "0.05" length = "0.05"/>
+            </geometry>
+            <material name = "black"/>
+        </visual>
+        <!-- right wheel collision -->
+        <collision>
+            <geometry>
+                <cylinder radius = "0.05" length = "0.05"/>
+            </geometry>
+        </collision>
+        <!-- right wheel inertial macros -->
+         <xacro:inertial_sphere mass = "${WHEEL_WEIGHT}" radius = "0.05">
+            <origin xyz = "0 0 0" rpy = "0 0 0"/>
+         </xacro:inertial_sphere> 
+    </link>
+
+    <!-- CASTER WHEEEL LINK -->
+     <joint name = "caster_wheel_joint" type = "fixed">
+        <parent link = "chassis"/>
+        <child link = "caster_wheel"/>
+        <origin xyz = "0.24 0 0"/>
+     </joint>
+
+     <link name = "caster_wheel">
+        <visual>
+            <geometry>
+                <sphere radius = "0.05"/>
+            </geometry>
+            <material name = "purple"/>
+        </visual>
+        <!-- COLLISION (just copy visual and change to collision) -->
+         <collision>
+            <geometry>
+                <sphere radius = "0.05"/>
+            </geometry>
+        </collision>
+     </link>
 
 </robot>

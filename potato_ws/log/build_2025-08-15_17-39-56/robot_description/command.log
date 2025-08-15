@@ -1,0 +1,2 @@
+Invoking command in '/home/ws/potato_ws/build/robot_description': /usr/bin/cmake --build /home/ws/potato_ws/build/robot_description -- -j14 -l14
+Invoked command in '/home/ws/potato_ws/build/robot_description' returned '2': /usr/bin/cmake --build /home/ws/potato_ws/build/robot_description -- -j14 -l14
