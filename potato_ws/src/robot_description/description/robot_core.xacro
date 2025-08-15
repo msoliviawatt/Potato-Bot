@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro = "https://www.ros.org/wiki/xacro">
+    <!-- MACROS -->
+     <!-- sizes are in meters -->
+     <xacro:property name = "BOX_LENGTH" value = "0.30"/>
+     <xacro:property name = "BOX_HEIGHT" value = "0.15"/>
+
+    <!-- COLORS -->
+    <material name = "white">
+        <color rgba = "1 1 1 1 " />
+    </material>
+
+    <material name = "black">
+        <color rgba = "0 0 0 1"/>
+    </material>
+
+    <material name = "violet">
+        <color rgba = "0.227 0 0.871 0.8"/>
+    </material>
+
+    <material name = "teal">
+        <color rgba = "0.129 0.98 0.98 0.8"/>
+    </material>
+
+    <!-- LINKS -->
+     <!-- setting our base link to be the center of rotation -->
+     <link name = "base_link">
+
+     </link>
+
+     <!-- our chassis is going to be a box -->
+      <joint name = "chassis_joint" type = "fixed">
+        <parent link = "base_link"/>
+        <child link = "chassis"/>
+        
+        <!-- origin for this link will be back bottom center, so right behind the base link -->
+        <origin xyz = "-0.1 0 0 "/>
+      </joint>
+
+      <link name = "chassis">
+        <visual>
+            <!-- moving the origin so the chassis is in the right place -->
+            <origin xyz = "${BOX_LENGTH/2} 0 0.075"/>
+            <geometry>
+                <!-- box size in meters -->
+                <box size = "${BOX_LENGTH} ${BOX_LENGTH} ${BOX_HEIGHT}"/> 
+            </geometry>
+
+            <!-- chassis will be white -->
+            <material name = "white"/>
+        </visual>
+      </link>
+
+</robot>
