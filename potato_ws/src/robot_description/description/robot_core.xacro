@@ -52,8 +52,8 @@
                 <box size = "${BOX_LENGTH} ${BOX_LENGTH} ${BOX_HEIGHT}"/> 
             </geometry>
 
-            <!-- chassis will be white -->
-            <material name = "white"/>
+            <!-- changing the name changes the color of the chassis -->
+            <material name = "purple"/>
         </visual>
         <!-- COLLISION (just a copy of the viusal but without material) -->
         <collision>

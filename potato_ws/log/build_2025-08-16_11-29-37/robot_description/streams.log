@@ -1,0 +1,39 @@
+[0.018s] Invoking command in '/home/ws/potato_ws/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/ws/potato_ws/src/robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ws/potato_ws/install/robot_description
+[0.053s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.459s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.493s] -- Found ament_lint_auto: 0.17.2 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.714s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.714s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.715s] -- Added test 'lint_cmake' to check CMake code style
+[0.716s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.718s] -- Added test 'xmllint' to check XML markup files
+[0.722s] -- Configuring done (0.7s)
+[0.730s] -- Generating done (0.0s)
+[0.733s] -- Build files have been written to: /home/ws/potato_ws/build/robot_description
+[0.742s] Invoked command in '/home/ws/potato_ws/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/ws/potato_ws/src/robot_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/ws/potato_ws/install/robot_description
+[0.743s] Invoking command in '/home/ws/potato_ws/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ws/potato_ws/build/robot_description -- -j14 -l14
+[0.828s] Invoked command in '/home/ws/potato_ws/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/ws/potato_ws/build/robot_description -- -j14 -l14
+[0.851s] Invoking command in '/home/ws/potato_ws/build/robot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/ws/potato_ws/build/robot_description
+[0.868s] -- Install configuration: ""
+[0.869s] -- Execute custom install script
+[0.871s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/description/inertial_macros.xacro
+[0.894s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/description/robot.urdf.xacro
+[0.917s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/description/robot_core.xacro
+[0.937s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/launch/launch_sim.launch.py
+[0.957s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/launch/rsp.launch.py
+[0.980s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/ament_index/resource_index/package_run_dependencies/robot_description
+[0.997s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/ament_index/resource_index/parent_prefix_path/robot_description
+[1.018s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/environment/ament_prefix_path.sh
+[1.037s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/environment/ament_prefix_path.dsv
+[1.055s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/environment/path.sh
+[1.074s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/environment/path.dsv
+[1.094s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/local_setup.bash
+[1.110s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/local_setup.sh
+[1.136s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/local_setup.zsh
+[1.157s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/local_setup.dsv
+[1.174s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/package.dsv
+[1.194s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/ament_index/resource_index/packages/robot_description
+[1.216s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/cmake/robot_descriptionConfig.cmake
+[1.237s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/cmake/robot_descriptionConfig-version.cmake
+[1.254s] -- Symlinking: /home/ws/potato_ws/install/robot_description/share/robot_description/package.xml
+[1.279s] Invoked command in '/home/ws/potato_ws/build/robot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/ws/potato_ws/build/robot_description

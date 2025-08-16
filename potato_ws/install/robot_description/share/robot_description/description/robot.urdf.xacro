@@ -1,5 +1,1 @@
-<?xml version = "1.0"?>
-<robot xmlns:xacro = "https://www.ros.org/wiki/xacro" name = "demo_bot">
-    <xacro:include filename = "robot_core.xacro"/>
-
-</robot>
+/home/ws/potato_ws/src/robot_description/description/robot.urdf.xacro
