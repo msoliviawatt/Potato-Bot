@@ -41,6 +41,17 @@ To add an entity to your existing session, use the following as a guide but chan
 ros2 run ros_gz_sim create -name <robot_name> -topic /robot_description
 ```
 
+# Streamlining
+To quickly simulate in Gazebo without having the run everything from the above two sections, use the launch file.
+```
+ros2 launch robot_description launch_sim.launch.py 
+```
+
+Control using keyboard input.
+```
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+
 # Save and Reload Rviz Session
 If you want to save your current session in rviz, go to file --> save config as --> save it to this directory with some name (e.g "rviz_view_1")
 
